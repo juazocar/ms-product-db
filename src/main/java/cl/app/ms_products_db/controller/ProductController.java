@@ -1,5 +1,6 @@
 package cl.app.ms_products_db.controller;
 
+import cl.app.ms_products_db.model.dto.ProductDTO;
 import cl.app.ms_products_db.model.entities.Product;
 import cl.app.ms_products_db.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ public class ProductController {
     ProductService productService;
 
     @GetMapping()
-    public ResponseEntity<List<Product>> findAll(){
+    public ResponseEntity<List<ProductDTO>> findAll(){
         return ResponseEntity.ok(productService.findAll());
     }
 }
